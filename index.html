@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Table</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article class="table-widget">
+      <div class="page-header">
+        <div class="titles">
+          <h1>Market Watch List</h1>
+          <p class="subtitle">
+            Real-time tracking of top performers and market trends.
+          </p>
+        </div>
+        <div class="tab-actions">
+          <button class="export-btn btn-blue" id="btn-export">
+            Export Data
+          </button>
+        </div>
+      </div>
+      <div class="table-container">
+        <table id="my-table">
+          <thead>
+            <tr>
+              <th class="checkbox-col">
+                <input type="checkbox" name="" id="master-checkbox" />
+              </th>
+              <th class="resizable sortable" data-col="company">Company :</th>
+              <th class="resizable sortable" data-col="company">TICKER :</th>
+              <th class="resizable sortable" data-col="company">SECTOR :</th>
+              <th class="resizable sortable" data-col="company">
+                MARKET CAP :
+              </th>
+              <th class="resizable sortable" data-col="company">
+                24H CHANGE :
+              </th>
+              <th class="resizable sortable" data-col="company">PRICE :</th>
+            </tr>
+          </thead>
+          <tbody id="table-rows">
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Apple Inc.</strong></td>
+              <td><span class="tag-gray">AAPL</span></td>
+              <td><span class="badge badge-blue">Technology</span></td>
+              <td>$2.8T</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +1.25%
+                </div>
+              </td>
+              <td>$182.50</td>
+            </tr>
+
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Microsoft Corp.</strong></td>
+              <td><span class="tag-gray">MSFT</span></td>
+              <td><span class="badge badge-purple">Technology</span></td>
+              <td>$2.6T</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -0.85%
+                </div>
+              </td>
+              <td>$345.10</td>
+            </tr>
+
+            <tr data-sector="Retail">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Amazon.com</strong></td>
+              <td><span class="tag-gray">AMZN</span></td>
+              <td><span class="badge badge-orange">Retail</span></td>
+              <td>$1.6T</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +2.10%
+                </div>
+              </td>
+              <td>$145.30</td>
+            </tr>
+
+            <tr data-sector="Finance">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>JPMorgan Chase</strong></td>
+              <td><span class="tag-gray">JPM</span></td>
+              <td><span class="badge badge-teal">Finance</span></td>
+              <td>$470B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +0.65%
+                </div>
+              </td>
+              <td>$155.40</td>
+            </tr>
+
+            <tr data-sector="Healthcare">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Pfizer Inc.</strong></td>
+              <td><span class="tag-gray">PFE</span></td>
+              <td><span class="badge badge-pink">Healthcare</span></td>
+              <td>$210B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -1.90%
+                </div>
+              </td>
+              <td>$36.75</td>
+            </tr>
+
+            <tr data-sector="Automobile">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Tesla Inc.</strong></td>
+              <td><span class="tag-gray">TSLA</span></td>
+              <td><span class="badge badge-purple">Automobile</span></td>
+              <td>$820B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +3.45%
+                </div>
+              </td>
+              <td>$255.80</td>
+            </tr>
+
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Alphabet Inc.</strong></td>
+              <td><span class="tag-gray">GOOGL</span></td>
+              <td><span class="badge badge-blue">Technology</span></td>
+              <td>$1.9T</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +0.90%
+                </div>
+              </td>
+              <td>$138.70</td>
+            </tr>
+
+            <tr data-sector="Social Media">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Meta Platforms</strong></td>
+              <td><span class="tag-gray">META</span></td>
+              <td><span class="badge badge-pink">Social</span></td>
+              <td>$1.2T</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -0.45%
+                </div>
+              </td>
+              <td>$476.20</td>
+            </tr>
+
+            <tr data-sector="Finance">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Bank of America</strong></td>
+              <td><span class="tag-gray">BAC</span></td>
+              <td><span class="badge badge-teal">Finance</span></td>
+              <td>$295B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +1.10%
+                </div>
+              </td>
+              <td>$34.90</td>
+            </tr>
+
+            <tr data-sector="Retail">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Walmart Inc.</strong></td>
+              <td><span class="tag-gray">WMT</span></td>
+              <td><span class="badge badge-orange">Retail</span></td>
+              <td>$430B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -0.30%
+                </div>
+              </td>
+              <td>$162.80</td>
+            </tr>
+
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>NVIDIA Corp.</strong></td>
+              <td><span class="tag-gray">NVDA</span></td>
+              <td><span class="badge badge-blue">Technology</span></td>
+              <td>$2.1T</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +4.85%
+                </div>
+              </td>
+              <td>$720.60</td>
+            </tr>
+
+            <tr data-sector="Energy">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Exxon Mobil</strong></td>
+              <td><span class="tag-gray">XOM</span></td>
+              <td><span class="badge badge-teal">Energy</span></td>
+              <td>$410B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -1.15%
+                </div>
+              </td>
+              <td>$104.50</td>
+            </tr>
+
+            <tr data-sector="Healthcare">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Johnson & Johnson</strong></td>
+              <td><span class="tag-gray">JNJ</span></td>
+              <td><span class="badge badge-pink">Healthcare</span></td>
+              <td>$435B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +0.40%
+                </div>
+              </td>
+              <td>$158.90</td>
+            </tr>
+
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Intel Corp.</strong></td>
+              <td><span class="tag-gray">INTC</span></td>
+              <td><span class="badge badge-purple">Technology</span></td>
+              <td>$195B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -2.35%
+                </div>
+              </td>
+              <td>$43.20</td>
+            </tr>
+
+            <tr data-sector="Retail">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Costco Wholesale</strong></td>
+              <td><span class="tag-gray">COST</span></td>
+              <td><span class="badge badge-orange">Retail</span></td>
+              <td>$350B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +1.75%
+                </div>
+              </td>
+              <td>$710.45</td>
+            </tr>
+
+            <tr data-sector="Finance">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Goldman Sachs</strong></td>
+              <td><span class="tag-gray">GS</span></td>
+              <td><span class="badge badge-teal">Finance</span></td>
+              <td>$140B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -0.95%
+                </div>
+              </td>
+              <td>$392.60</td>
+            </tr>
+
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Adobe Inc.</strong></td>
+              <td><span class="tag-gray">ADBE</span></td>
+              <td><span class="badge badge-blue">Technology</span></td>
+              <td>$260B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +1.30%
+                </div>
+              </td>
+              <td>$540.80</td>
+            </tr>
+
+            <tr data-sector="Automobile">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Ford Motor</strong></td>
+              <td><span class="tag-gray">F</span></td>
+              <td><span class="badge badge-purple">Automobile</span></td>
+              <td>$48B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-red">▼</span> -1.60%
+                </div>
+              </td>
+              <td>$12.30</td>
+            </tr>
+
+            <tr data-sector="Entertainment">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>Netflix Inc.</strong></td>
+              <td><span class="tag-gray">NFLX</span></td>
+              <td><span class="badge badge-pink">Entertainment</span></td>
+              <td>$250B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +2.90%
+                </div>
+              </td>
+              <td>$612.40</td>
+            </tr>
+
+            <tr data-sector="Technology">
+              <td><input type="checkbox" class="row-checkbox" /></td>
+              <td><strong>IBM Corp.</strong></td>
+              <td><span class="tag-gray">IBM</span></td>
+              <td><span class="badge badge-blue">Technology</span></td>
+              <td>$170B</td>
+              <td>
+                <div class="status-wrapper">
+                  <span class="dot-green">▲</span> +0.55%
+                </div>
+              </td>
+              <td>$188.20</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <div class="total-count">
+          Total
+          <strong id="total-rows-count"> </strong>
+        </div>
+        <div class="pagination-controls">
+          <span>Rows per page</span>
+          <select name="" id="lines-per-page" class="page-select">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+          </select>
+          <div class="page-nav" id="pagination-wrapper"></div>
+        </div>
+      </div>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>
